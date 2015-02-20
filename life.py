@@ -10,11 +10,8 @@ class Life:
 		self.cells = [[False]*width for i in xrange(height)]
 		self.newcells = [[False]*width for i in xrange(height)]
 
-		self.cells[2][3] = True
-		self.cells[3][3] = True
-		self.cells[4][3] = True
-		self.cells[4][5] = True
-		self.cells[3][4] = True
+		for i, j in [(2,3), (3,3), (4,3), (4,5), (3,4)]:
+			self.cells[i][j] = True
 
 	def printCells(self):
 		print ""
