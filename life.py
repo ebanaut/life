@@ -36,22 +36,22 @@ class Life:
 				if not(i==0 and j == 0):
 					if self.cells[y+i][x+j] == True:
 						neighbors += 1
-		return(neighbors)
+		return neighbors
 
 	def isAlive(self, y, x):
 		n = self.neighbors(y, x)
 		if self.cells[y][x] == True:
 			if n < 2:
-				return(False)
+				return False
 			elif n > 3:
-				return(False)
+				return False
 			else:
-				return(True)
+				return True
 		else:
 			if n == 3:
-				return(True)
+				return True
 			else:
-				return(False)
+				return False
 
 	def update(self):
 		newCells = []
@@ -69,7 +69,7 @@ def play():
 	test = Life()
 	plt.ion()
 	plt.show()
-	while(True):
+	while True:
 		test.update()
 		array = np.array(test.cells)
 		plt.imshow(array, interpolation='nearest')
