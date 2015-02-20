@@ -36,11 +36,7 @@ class Life:
 		return n == 3 or (n == 2 and self.cells[y][x])
 
 	def update(self):
-		newCells = []
-		for i in range(height):
-			newCells.append([])
-			for j in range(width):
-				newCells[i].append(False)
+		newCells = [[False]*width for i in xrange(height)]
 
 		for i in range(1, height-1):
 			for j in range(1, width-1):
