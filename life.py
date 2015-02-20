@@ -8,6 +8,7 @@ height = 100
 class Life:
 	def __init__(self):
 		self.cells = [[False]*width for i in xrange(height)]
+		self.newcells = [[False]*width for i in xrange(height)]
 
 		self.cells[2][3] = True
 		self.cells[3][3] = True
@@ -31,12 +32,11 @@ class Life:
 		return n == 3 or (n == 2 and self.cells[y][x])
 
 	def update(self):
-		newCells = [[False]*width for i in xrange(height)]
-
 		for i in range(1, height-1):
 			for j in range(1, width-1):
-				newCells[i][j] = self.isAlive(i, j)
-		self.cells = newCells
+				self.newcells[i][j] = self.isAlive(i, j)
+				
+		self.cells, self.newcells = self.newcells, self.cells
 
 def play():
 	test = Life()
