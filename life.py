@@ -36,18 +36,7 @@ class Life:
 
 	def isAlive(self, y, x):
 		n = self.neighbors(y, x)
-		if self.cells[y][x] == True:
-			if n < 2:
-				return False
-			elif n > 3:
-				return False
-			else:
-				return True
-		else:
-			if n == 3:
-				return True
-			else:
-				return False
+		return n == 3 or (n == 2 and self.cells[y][x])
 
 	def update(self):
 		newCells = []
