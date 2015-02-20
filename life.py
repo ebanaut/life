@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 width = 100
 height = 100
 
-class life:
+class Life:
 	def __init__(self):
 		self.cells = []
 		for i in range(height):
@@ -66,7 +66,7 @@ class life:
 		self.cells = newCells
 
 def play():
-	test = life()
+	test = Life()
 	plt.ion()
 	plt.show()
 	while(True):
