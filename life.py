@@ -17,13 +17,10 @@ class Life:
 
 	def printCells(self):
 		print ""
-		for i in range(1, height-1):
+		for row in self.cells:
 			print ""
-			for j in range(1, width-1):
-				if self.cells[i][j] == True:
-					print "*",
-				else:
-					print ".",
+			for cell in row:
+				print "*" if cell else ".",
 
 	def neighbors(self, y, x):
 		neighbors = 0
