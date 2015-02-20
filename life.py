@@ -23,13 +23,8 @@ class Life:
 				print "*" if cell else ".",
 
 	def neighbors(self, y, x):
-		neighbors = 0
-		for i in range(-1,2):
-			for j in range(-1,2):
-				if not(i==0 and j == 0):
-					if self.cells[y+i][x+j] == True:
-						neighbors += 1
-		return neighbors
+		coords = [(y+i, x+j) for i in xrange(-1, 2) for j in xrange(-1, 2) if i != 0 or j != 0]
+		return sum([self.cells[j][i] for j, i in coords])
 
 	def isAlive(self, y, x):
 		n = self.neighbors(y, x)
