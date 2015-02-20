@@ -7,11 +7,7 @@ height = 100
 
 class Life:
 	def __init__(self):
-		self.cells = []
-		for i in range(height):
-			self.cells.append([])
-			for j in range(width):
-				self.cells[i].append(False)
+		self.cells = [[False]*width for i in xrange(height)]
 
 		self.cells[2][3] = True
 		self.cells[3][3] = True
