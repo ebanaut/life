@@ -1,7 +1,9 @@
 import time
+import numpy as np
+import matplotlib.pyplot as plt
 
-width = 10
-height = 15
+width = 100
+height = 100
 
 class life:
 	def __init__(self):
@@ -65,9 +67,11 @@ class life:
 
 def play():
 	test = life()
+	plt.ion()
+	plt.show()
 	while(True):
-		test.printCells()
 		test.update()
-		time.sleep(0.2)
-
+		array = np.array(test.cells)
+		plt.imshow(array, interpolation='nearest')
+		plt.draw()
 play()
